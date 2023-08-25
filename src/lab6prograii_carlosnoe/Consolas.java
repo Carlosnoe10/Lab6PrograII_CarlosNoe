@@ -5,18 +5,20 @@ import java.util.Date;
 public class Consolas{
     public String identificación;
     public String fabricante;
+    public String modelo;
     public Date AñosDeUso;
     public double precio;
     public int JuegosDisponibles;
-    public String modelo;
+    
 
     public Consolas(String identificación, String fabricante, Date AñosDeUso, double precio, int JuegosDisponibles, String modelo) {
         this.identificación = identificación;
         this.fabricante = fabricante;
+        this.modelo = modelo;
         this.AñosDeUso = AñosDeUso;
         this.precio = precio;
         this.JuegosDisponibles = JuegosDisponibles;
-        this.modelo = modelo;
+        
     }
 
     public String getIdentificación() {

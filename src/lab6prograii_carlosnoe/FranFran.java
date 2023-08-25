@@ -4,11 +4,13 @@
  */
 package lab6prograii_carlosnoe;
 
-public class FranFran extends javax.swing.JFrame {
+import java.util.ArrayList;
 
-    /**
-     * Creates new form FranFran
-     */
+public class FranFran extends javax.swing.JFrame {
+    
+    static ArrayList<Consolas> one;
+    static ArrayList<Juegos> two;
+    
     public FranFran() {
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
@@ -28,42 +30,164 @@ public class FranFran extends javax.swing.JFrame {
         POPMenu_Consolas = new javax.swing.JPopupMenu();
         Agregar = new javax.swing.JMenuItem();
         Modificar = new javax.swing.JMenuItem();
-        Listar = new javax.swing.JMenuItem();
         Eliminar = new javax.swing.JMenuItem();
         POPMenu_Juegos = new javax.swing.JPopupMenu();
-        Eliminar1 = new javax.swing.JMenuItem();
-        Listar1 = new javax.swing.JMenuItem();
-        Modificar1 = new javax.swing.JMenuItem();
         Agregar1 = new javax.swing.JMenuItem();
+        Modificar1 = new javax.swing.JMenuItem();
+        Eliminar1 = new javax.swing.JMenuItem();
+        Agreger = new javax.swing.JFrame();
+        jFrame1 = new javax.swing.JFrame();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jTextPane3 = new javax.swing.JTextPane();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTextPane4 = new javax.swing.JTextPane();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        jTextPane2 = new javax.swing.JTextPane();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextPane1 = new javax.swing.JTextPane();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jLabel4 = new javax.swing.JLabel();
+        jRadioButton4 = new javax.swing.JRadioButton();
+        jRadioButton5 = new javax.swing.JRadioButton();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
         Principal = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TablaConsolas = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
         ListaDeJuegos = new javax.swing.JList<>();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
-        Agregar.setText("jMenuItem1");
+        Agregar.setText("Agregar");
+        Agregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AgregarActionPerformed(evt);
+            }
+        });
         POPMenu_Consolas.add(Agregar);
 
-        Modificar.setText("jMenuItem1");
+        Modificar.setText("Modificar");
         POPMenu_Consolas.add(Modificar);
 
-        Listar.setText("jMenuItem1");
-        POPMenu_Consolas.add(Listar);
-
-        Eliminar.setText("jMenuItem1");
+        Eliminar.setText("Eliminar");
         POPMenu_Consolas.add(Eliminar);
 
-        Eliminar1.setText("jMenuItem1");
-        POPMenu_Juegos.add(Eliminar1);
+        Agregar1.setText("Agregar");
+        POPMenu_Juegos.add(Agregar1);
 
-        Listar1.setText("jMenuItem1");
-        POPMenu_Juegos.add(Listar1);
-
-        Modificar1.setText("jMenuItem1");
+        Modificar1.setText("Modificar");
         POPMenu_Juegos.add(Modificar1);
 
-        Agregar1.setText("jMenuItem1");
-        POPMenu_Juegos.add(Agregar1);
+        Eliminar1.setText("Eliminar");
+        POPMenu_Juegos.add(Eliminar1);
+
+        javax.swing.GroupLayout AgregerLayout = new javax.swing.GroupLayout(Agreger.getContentPane());
+        Agreger.getContentPane().setLayout(AgregerLayout);
+        AgregerLayout.setHorizontalGroup(
+            AgregerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 504, Short.MAX_VALUE)
+        );
+        AgregerLayout.setVerticalGroup(
+            AgregerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 500, Short.MAX_VALUE)
+        );
+
+        jScrollPane5.setViewportView(jTextPane3);
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jScrollPane6.setViewportView(jTextPane4);
+
+        jScrollPane4.setViewportView(jTextPane2);
+
+        jRadioButton1.setText("Agregado");
+
+        jScrollPane3.setViewportView(jTextPane1);
+
+        jRadioButton2.setText("Nuevo");
+
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Agregar");
+
+        jRadioButton4.setText("Usado");
+
+        jRadioButton5.setText("Rentable");
+
+        jLabel5.setText("Nombre");
+
+        jLabel6.setText("Descripcion");
+
+        jLabel7.setText("Canridad Disponibles");
+
+        javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
+        jFrame1.getContentPane().setLayout(jFrame1Layout);
+        jFrame1Layout.setHorizontalGroup(
+            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrame1Layout.createSequentialGroup()
+                .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jFrame1Layout.createSequentialGroup()
+                        .addGap(166, 166, 166)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jFrame1Layout.createSequentialGroup()
+                        .addGap(69, 69, 69)
+                        .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jRadioButton5)
+                            .addComponent(jRadioButton1)
+                            .addGroup(jFrame1Layout.createSequentialGroup()
+                                .addGap(38, 38, 38)
+                                .addComponent(jRadioButton4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jRadioButton2))))
+                    .addGroup(jFrame1Layout.createSequentialGroup()
+                        .addGap(93, 93, 93)
+                        .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jComboBox1, 0, 316, Short.MAX_VALUE)
+                                .addComponent(jScrollPane3)
+                                .addComponent(jScrollPane4)
+                                .addComponent(jScrollPane5)
+                                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel7))))
+                .addContainerGap(97, Short.MAX_VALUE))
+        );
+        jFrame1Layout.setVerticalGroup(
+            jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jFrame1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel5)
+                .addGap(3, 3, 3)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel6)
+                .addGap(4, 4, 4)
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(2, 2, 2)
+                .addComponent(jLabel7)
+                .addGap(1, 1, 1)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(48, 48, 48)
+                .addGroup(jFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jRadioButton4)
+                    .addComponent(jRadioButton2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                .addComponent(jRadioButton5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jRadioButton1)
+                .addGap(81, 81, 81))
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,15 +197,34 @@ public class FranFran extends javax.swing.JFrame {
 
         TablaConsolas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Identificación", "Fabricante", "Modelo", "Años De Uso", "Precio", "Juegos Disponibles"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class, java.lang.Double.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         TablaConsolas.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 TablaConsolasMouseClicked(evt);
@@ -89,7 +232,7 @@ public class FranFran extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(TablaConsolas);
 
-        Principal.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 340, -1, -1));
+        Principal.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 400, -1, 150));
 
         ListaDeJuegos.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -101,14 +244,27 @@ public class FranFran extends javax.swing.JFrame {
                 ListaDeJuegosMouseClicked(evt);
             }
         });
-        ListaDeJuegos.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                ListaDeJuegosKeyPressed(evt);
-            }
-        });
         jScrollPane2.setViewportView(ListaDeJuegos);
 
         Principal.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 330, 460, 420));
+
+        jLabel1.setFont(new java.awt.Font("Dialog", 2, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Tienda De Juegos");
+        Principal.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 960, 150));
+
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("VideoJuegos");
+        Principal.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1090, 260, 260, 60));
+
+        jLabel3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Consolas");
+        Principal.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 270, 260, 60));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -132,10 +288,6 @@ public class FranFran extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_TablaConsolasMouseClicked
 
-    private void ListaDeJuegosKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ListaDeJuegosKeyPressed
-
-    }//GEN-LAST:event_ListaDeJuegosKeyPressed
-
     private void ListaDeJuegosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ListaDeJuegosMouseClicked
         int pam = evt.getButton();
         if (pam == 3) {
@@ -144,6 +296,10 @@ public class FranFran extends javax.swing.JFrame {
             
         }
     }//GEN-LAST:event_ListaDeJuegosMouseClicked
+
+    private void AgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarActionPerformed
+        Agreger.show(true);
+    }//GEN-LAST:event_AgregarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -183,18 +339,38 @@ public class FranFran extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem Agregar;
     private javax.swing.JMenuItem Agregar1;
+    private javax.swing.JFrame Agreger;
     private javax.swing.JMenuItem Eliminar;
     private javax.swing.JMenuItem Eliminar1;
     private javax.swing.JList<String> ListaDeJuegos;
-    private javax.swing.JMenuItem Listar;
-    private javax.swing.JMenuItem Listar1;
     private javax.swing.JMenuItem Modificar;
     private javax.swing.JMenuItem Modificar1;
     private javax.swing.JPopupMenu POPMenu_Consolas;
     private javax.swing.JPopupMenu POPMenu_Juegos;
     private javax.swing.JPanel Principal;
     private javax.swing.JTable TablaConsolas;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JFrame jFrame1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JRadioButton jRadioButton5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JTextPane jTextPane1;
+    private javax.swing.JTextPane jTextPane2;
+    private javax.swing.JTextPane jTextPane3;
+    private javax.swing.JTextPane jTextPane4;
     // End of variables declaration//GEN-END:variables
 }

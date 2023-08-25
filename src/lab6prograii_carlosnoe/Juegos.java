@@ -93,6 +93,6 @@ public class Juegos {
         return "Juegos{" + "Nombre=" + Nombre + ", Descripci\u00f3n=" + Descripción + ", Estado=" + Estado + ", FechaDeLanzamiento=" + FechaDeLanzamiento + ", CantidadDisponibles=" + CantidadDisponibles + ", Precio=" + Precio + ", Rentable=" + Rentable + ", Agregado=" + Agregado + '}';
     }
 
-    
+        
     
 }
