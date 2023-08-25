@@ -30,9 +30,16 @@ public class FranFran extends javax.swing.JFrame {
         Modificar = new javax.swing.JMenuItem();
         Listar = new javax.swing.JMenuItem();
         Eliminar = new javax.swing.JMenuItem();
+        POPMenu_Juegos = new javax.swing.JPopupMenu();
+        Eliminar1 = new javax.swing.JMenuItem();
+        Listar1 = new javax.swing.JMenuItem();
+        Modificar1 = new javax.swing.JMenuItem();
+        Agregar1 = new javax.swing.JMenuItem();
         Principal = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         TablaConsolas = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        ListaDeJuegos = new javax.swing.JList<>();
 
         Agregar.setText("jMenuItem1");
         POPMenu_Consolas.add(Agregar);
@@ -45,6 +52,18 @@ public class FranFran extends javax.swing.JFrame {
 
         Eliminar.setText("jMenuItem1");
         POPMenu_Consolas.add(Eliminar);
+
+        Eliminar1.setText("jMenuItem1");
+        POPMenu_Juegos.add(Eliminar1);
+
+        Listar1.setText("jMenuItem1");
+        POPMenu_Juegos.add(Listar1);
+
+        Modificar1.setText("jMenuItem1");
+        POPMenu_Juegos.add(Modificar1);
+
+        Agregar1.setText("jMenuItem1");
+        POPMenu_Juegos.add(Agregar1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -70,7 +89,26 @@ public class FranFran extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(TablaConsolas);
 
-        Principal.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, -1, -1));
+        Principal.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 340, -1, -1));
+
+        ListaDeJuegos.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        ListaDeJuegos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ListaDeJuegosMouseClicked(evt);
+            }
+        });
+        ListaDeJuegos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                ListaDeJuegosKeyPressed(evt);
+            }
+        });
+        jScrollPane2.setViewportView(ListaDeJuegos);
+
+        Principal.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 330, 460, 420));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -87,10 +125,25 @@ public class FranFran extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void TablaConsolasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TablaConsolasMouseClicked
-         if (evt.isPopupTrigger() && TablaConsolas.getSelectedRow() != -1) {
-        POPMenu_Consolas.show(evt.getComponent(), evt.getX(), evt.getY());
+        int pam = evt.getButton();
+        if (pam == 3) {
+            POPMenu_Consolas.show(evt.getComponent(), evt.getX(), evt.getY());
+            TablaConsolas.getSelectedRow();
         }
     }//GEN-LAST:event_TablaConsolasMouseClicked
+
+    private void ListaDeJuegosKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ListaDeJuegosKeyPressed
+
+    }//GEN-LAST:event_ListaDeJuegosKeyPressed
+
+    private void ListaDeJuegosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ListaDeJuegosMouseClicked
+        int pam = evt.getButton();
+        if (pam == 3) {
+            POPMenu_Consolas.show(evt.getComponent(), evt.getX(), evt.getY());
+            ListaDeJuegos.getSelectedIndex();
+            
+        }
+    }//GEN-LAST:event_ListaDeJuegosMouseClicked
 
     /**
      * @param args the command line arguments
@@ -129,12 +182,19 @@ public class FranFran extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem Agregar;
+    private javax.swing.JMenuItem Agregar1;
     private javax.swing.JMenuItem Eliminar;
+    private javax.swing.JMenuItem Eliminar1;
+    private javax.swing.JList<String> ListaDeJuegos;
     private javax.swing.JMenuItem Listar;
+    private javax.swing.JMenuItem Listar1;
     private javax.swing.JMenuItem Modificar;
+    private javax.swing.JMenuItem Modificar1;
     private javax.swing.JPopupMenu POPMenu_Consolas;
+    private javax.swing.JPopupMenu POPMenu_Juegos;
     private javax.swing.JPanel Principal;
     private javax.swing.JTable TablaConsolas;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
 }
