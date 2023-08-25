@@ -5,9 +5,11 @@
 package lab6prograii_carlosnoe;
 
 import java.util.ArrayList;
+import java.util.Date;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableColumnModel;
+import javax.swing.table.TableModel;
 
 public class FranFran extends javax.swing.JFrame {
 
@@ -15,10 +17,12 @@ public class FranFran extends javax.swing.JFrame {
     static ArrayList<Juegos> two;
 
     public FranFran() {
+
         initComponents();
         this.setExtendedState(MAXIMIZED_BOTH);
         Principal.setVisible(true);
         Principal.setSize(1220, 610);
+        LLenarOActualizar();
     }
 
     /**
@@ -85,6 +89,7 @@ public class FranFran extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jScrollPane8 = new javax.swing.JScrollPane();
         jl_personas = new javax.swing.JList();
+        jButton3 = new javax.swing.JButton();
 
         Agregar.setText("Agregar");
         Agregar.addActionListener(new java.awt.event.ActionListener() {
@@ -98,6 +103,11 @@ public class FranFran extends javax.swing.JFrame {
         POPMenu_Consolas.add(Modificar);
 
         Eliminar.setText("Eliminar");
+        Eliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EliminarActionPerformed(evt);
+            }
+        });
         POPMenu_Consolas.add(Eliminar);
 
         Agregar1.setText("Agregar");
@@ -112,6 +122,11 @@ public class FranFran extends javax.swing.JFrame {
         POPMenu_Juegos.add(Modificar1);
 
         Eliminar1.setText("Eliminar");
+        Eliminar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Eliminar1ActionPerformed(evt);
+            }
+        });
         POPMenu_Juegos.add(Eliminar1);
 
         jScrollPane4.setViewportView(jTextPane2);
@@ -383,6 +398,13 @@ public class FranFran extends javax.swing.JFrame {
 
         Principal.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(990, 350, 480, 320));
 
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        Principal.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 320, 40, 30));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -426,19 +448,30 @@ public class FranFran extends javax.swing.JFrame {
     }//GEN-LAST:event_jl_personasMouseClicked
 
     private void jl_personasKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jl_personasKeyPressed
-        // TODO add your handling code here:
-        if (evt.getKeyCode() == evt.VK_DELETE) {
-            if (jl_personas.getSelectedIndex() >= 0) {
+
+    }//GEN-LAST:event_jl_personasKeyPressed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        LLenarOActualizar();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
+                TableModel modelo
+                        = (TableModel) TablaConsolas.getModel();
+                modelo. removeTableModelListener(TablaConsolas);
+                TablaConsolas.setModel(modelo);
+                JOptionPane.showMessageDialog(this,
+                        "Eliminado exitosamente");
+    }//GEN-LAST:event_EliminarActionPerformed
+
+    private void Eliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Eliminar1ActionPerformed
                 DefaultListModel modelo
                         = (DefaultListModel) jl_personas.getModel();
                 modelo.remove(jl_personas.getSelectedIndex());
                 jl_personas.setModel(modelo);
                 JOptionPane.showMessageDialog(this,
                         "Eliminado exitosamente");
-
-            }
-        }
-    }//GEN-LAST:event_jl_personasKeyPressed
+    }//GEN-LAST:event_Eliminar1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -476,24 +509,25 @@ public class FranFran extends javax.swing.JFrame {
     }
 
     public void LLenarOActualizar() {
+        int lom = 1;
         for (int i = 0; i < one.size(); i++) {
-            one.get(i).getFabricante();
-            one.get(i).getIdentificación();
-            one.get(i).getModelo();
-            one.get(i).getAñosDeUso();
-            
-        
-        TablaConsolas.getModel().setValueAt(ABORT, WIDTH, ICONIFIED);
-        TablaConsolas.getModel().setValueAt(ABORT, WIDTH, ICONIFIED);
-        TablaConsolas.getModel().setValueAt(ABORT, WIDTH, ICONIFIED);
-        TablaConsolas.getModel().setValueAt(ABORT, WIDTH, ICONIFIED);
-        TablaConsolas.getModel().setValueAt(ABORT, WIDTH, ICONIFIED);
-        
-        
-        
-        
+            String pam = one.get(i).getFabricante();
+            String pam2 = one.get(i).getIdentificación();
+            String pam3 = one.get(i).getModelo();
+            Date pam4 = one.get(i).getAñosDeUso();
+            double pam5 = one.get(i).getPrecio();
+            int pam6 = one.get(i).getJuegosDisponibles();
+
+            TablaConsolas.getModel().setValueAt(pam, 1, lom);
+            TablaConsolas.getModel().setValueAt(pam2, 2, lom);
+            TablaConsolas.getModel().setValueAt(pam3, 3, lom);
+            TablaConsolas.getModel().setValueAt(5, 4, lom);
+            TablaConsolas.getModel().setValueAt(pam5, 5, lom);
+            TablaConsolas.getModel().setValueAt(pam6, 6, lom);
+            lom += 1;
+
         }
-        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem Agregar;
     private javax.swing.JMenuItem Agregar1;
@@ -509,6 +543,7 @@ public class FranFran extends javax.swing.JFrame {
     private javax.swing.JTable TablaConsolas;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
